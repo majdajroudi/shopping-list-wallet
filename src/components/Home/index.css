@@ -1,0 +1,41 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__headerCard {
+    margin: 3%;
+    width: 50%;
+    border-color: #979797;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D8D8D8;
+}
+
+.home__headerCard--wallet,
+.home__productAddition--products {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.home__productAddition {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.home__headerCard--btn.btn.btn-primary,
+.home__productAddition--btn.btn.btn-primary {
+    color: black;
+    border-color: black;
+    background-color: #66FC5B;
+}

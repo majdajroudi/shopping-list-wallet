@@ -1,0 +1,21 @@
+.home__productsCard {
+    width: 50%;
+}
+
+.home__productsCard__header {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.home__productsCard__header--productsName {
+    width: 65%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.home__productsCard__header--cost {
+    width: 35%;
+    display: flex;
+    justify-content: flex-start;
+}
