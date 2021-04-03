@@ -39,3 +39,25 @@
     border-color: black;
     background-color: #66FC5B;
 }
+
+.home__alert.card{
+    width: 50%;
+    margin: 3%;
+    border-color: #D66565;
+}
+
+.home__alert .card-body {
+    background-color: #E4C2C2;
+}
+
+.home__buyBtn.row {
+    width: 50%;
+    margin: 0 3%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home__buyBtn--btn.btn.btn-primary {
+    color: black;
+    border-color: black;
+}

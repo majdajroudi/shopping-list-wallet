@@ -21,7 +21,8 @@ function ProductAdditionForm(props) {
 
     const handleAddBtn = (e) => {
         e.preventDefault()
-        props.formShownStateFunction(false)
+        props.productsListFunction([...props.productsListState, inputHandler])
+        setInputHandler({productsName: "", cost: ""})
     }
 
     return (
@@ -29,11 +30,11 @@ function ProductAdditionForm(props) {
             <Row className="productForm__row">
                 <Col className="productForm__productName">
                     <Form.Label className="productForm__productName--label">Ürün Adı</Form.Label>
-                    <Form.Control onChange={(e) => handleNameChange(e)} className="productForm__productName--input" type="input"  />
+                    <Form.Control value={inputHandler.productsName} onChange={(e) => handleNameChange(e)} className="productForm__productName--input" type="input"  />
                 </Col>
                 <Col>
                     <Form.Label className="productForm__productCost--label">Tutar</Form.Label>
-                    <Form.Control onChange={(e) => handleCostChange(e)} className="productForm__productCost--input" type="number" />
+                    <Form.Control value={inputHandler.cost} onChange={(e) => handleCostChange(e)} className="productForm__productCost--input" type="number" />
                 </Col>
                 <Col>
                     <Button onClick={(e) => handleAddBtn(e)} className="productForm--btn">

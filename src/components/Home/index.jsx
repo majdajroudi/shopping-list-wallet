@@ -1,10 +1,14 @@
-import React,{useState} from "react"
-import { Card, Button } from 'react-bootstrap'
+import React,{useState, useEffect} from "react"
+import { Card, Button, Row } from 'react-bootstrap'
 import ProductsContainer from "../ProductsContainer"
+import {users} from "../../api/data.js"
 import "./index.css"
+
+const NET_WORTH             = users.user1.netWorth
 
 function Home()  {
     const [isFormShown, setIsFormShown] = useState(false)
+    const [isBuyable, setIsBuyable]     = useState(true)
 
     const handleAdditionClick = (e) => {
         e.preventDefault()
@@ -15,7 +19,7 @@ function Home()  {
         <div className="home">
             <Card className="home__headerCard" body>
                 <span className="home__headerCard--wallet">
-                    Cüzdan:
+                    Cüzdan: {NET_WORTH} TL
                 </span>
                 <Button className="home__headerCard--btn">
                     Para Ekle
@@ -31,7 +35,21 @@ function Home()  {
                 </Button>
             </div>
 
-            <ProductsContainer formShownState={isFormShown} formShownStateFunction={setIsFormShown} />
+            <ProductsContainer 
+                formShownState={isFormShown} 
+                netWorth={NET_WORTH} 
+                formShownStateFunction={setIsFormShown} 
+                isBuyableFunction={setIsBuyable}/>
+            {!isBuyable &&  
+            <Card className="home__alert" body>
+                İşlem için yeterli bakiyeniz bulunmamaktadır.
+            </Card> }
+
+            <Row className="home__buyBtn">
+                <Button className="home__buyBtn--btn" disabled={!isBuyable} style={{backgroundColor: isBuyable? "#66FC5B" : "#CDCDCD"}}>
+                    Satın Al
+                </Button>
+            </Row>
         </div>
     )
 }
