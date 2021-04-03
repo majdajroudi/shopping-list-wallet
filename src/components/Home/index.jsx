@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react"
+import React,{useState} from "react"
 import { Card, Button, Row } from 'react-bootstrap'
 import ProductsContainer from "../ProductsContainer"
 import {users} from "../../api/Mock-Data.js"
