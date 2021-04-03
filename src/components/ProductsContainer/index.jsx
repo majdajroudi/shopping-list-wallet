@@ -60,7 +60,7 @@ function ProductsContainer(props) {
             </Card.Body>
             <Card.Footer className="home__productsCard__footer">
                 {/* Precision is set to 4 for UI reasons. */}
-                toplam tutar: {totalCost.toPrecision(4)} TL
+                Toplam Tutar: {totalCost.toPrecision(4)} TL
             </Card.Footer>
         </Card>
     )
