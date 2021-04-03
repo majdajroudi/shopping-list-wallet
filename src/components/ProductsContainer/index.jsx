@@ -21,6 +21,8 @@ function ProductsContainer(props) {
     useEffect(() => {
         const newTotal = calculateTotal(productsList);
         setTotalCost(newTotal)
+
+        // if total cost of products is higher than the net worth then set buyable to false
         props.isBuyableFunction(newTotal <= props.netWorth? true : false)
     }, [productsList])
 
@@ -57,6 +59,7 @@ function ProductsContainer(props) {
                 
             </Card.Body>
             <Card.Footer className="home__productsCard__footer">
+                {/* Precision is set to 4 for UI reasons. */}
                 toplam tutar: {totalCost.toPrecision(4)} TL
             </Card.Footer>
         </Card>
