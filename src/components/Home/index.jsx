@@ -4,12 +4,15 @@ import ProductsContainer from "../ProductsContainer"
 import {users} from "../../api/data.js"
 import "./index.css"
 
-const NET_WORTH             = users.user1.netWorth
+const NET_WORTH = users.user1.netWorth
 
 function Home()  {
+    // isFormshown state shows the add product form when "URUN EKLE" button is clicked
     const [isFormShown, setIsFormShown] = useState(false)
+    // isBuyable state enables/disables the buy button and shows/hides the warning
     const [isBuyable, setIsBuyable]     = useState(true)
 
+    // handles URUN EKLE button
     const handleAdditionClick = (e) => {
         e.preventDefault()
         setIsFormShown(true)
