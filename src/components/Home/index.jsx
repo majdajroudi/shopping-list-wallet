@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react"
 import { Card, Button, Row } from 'react-bootstrap'
 import ProductsContainer from "../ProductsContainer"
-import {users} from "../../api/data.js"
+import {users} from "../../api/Mock-Data.js"
 import "./index.css"
 
 const NET_WORTH = users.user1.netWorth
